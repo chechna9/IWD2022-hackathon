@@ -54,19 +54,33 @@ class _NeedsState extends State<Needs> {
         backgroundColor: myRed,
       ),
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: IconButton(
-          icon: Transform.rotate(
-            angle: 3.15,
-            child: const Icon(
-              Icons.home,
-              color: Colors.white,
-              size: 30,
+          backgroundColor: Colors.white,
+          title: Column(children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //crossAxisAlignment: CrossAxisAlignment.,
+              children: [
+                Container(
+                  padding: EdgeInsets.only(left: 22),
+                  child: Image.asset(
+                    'assets/home.png',
+                    width: 30.0,
+                    height: 30.0,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(right: 20),
+                  child: Image.asset(
+                    'assets/LG-LOGO.png',
+                    width: 70.0,
+                    height: 70.0,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ],
             ),
-          ),
-          onPressed: () async {},
-        ),
-      ),
+          ])),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
