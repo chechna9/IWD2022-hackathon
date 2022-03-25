@@ -12,7 +12,7 @@ void main() async {
     theme: ThemeData(
       fontFamily: "Roboto",
     ),
-    initialRoute: '/testSwiper', // initialisation de la route
+    initialRoute: '/needs', // initialisation de la route
     routes: {
       '/showRecette': (context) => showRecettes(),
       '/statistics': (context) => Statistics(),
