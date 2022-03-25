@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
+
 import 'package:iwd2022/screens/DetailRecette.dart';
 import 'package:iwd2022/screens/Drawer.dart';
 import 'package:iwd2022/screens/Home.dart';
 import 'package:iwd2022/screens/LetsCookies.dart';
+
+
+import 'package:iwd2022/screens/menu.dart';
+import 'package:iwd2022/screens/needs.dart';
+import 'package:iwd2022/screens/showRecettes.dart';
+import 'package:iwd2022/screens/statistics.dart';
+
 import 'package:iwd2022/screens/test_swiper.dart';
 void main() {
   runApp(const MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -73,3 +82,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
