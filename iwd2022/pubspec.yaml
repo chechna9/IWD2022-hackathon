@@ -39,6 +39,8 @@ dependencies:
   percent_indicator: ^3.4.0
 
   flutter_slidable: ^1.2.0
+  carousel_slider: ^4.0.0
+  
 
 dev_dependencies:
   flutter_test:
@@ -62,8 +64,10 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
+    - assets/
     - jsonfile/
     - assets/tomate.png
+    - assets/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
