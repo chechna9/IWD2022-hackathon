@@ -9,134 +9,126 @@ class MenuList extends StatefulWidget {
 }
 
 class _MenuListState extends State<MenuList> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-
-    return Column(
-
     return Scaffold(
-        appBar: AppBar(
-            backgroundColor: Colors.white,
-            title: Column(children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //crossAxisAlignment: CrossAxisAlignment.,
-                children: [
-                  Container(
-                    padding: EdgeInsets.only(left: 22),
-                    child: Image.asset(
-                      'home.png',
-                      width: 30.0,
-                      height: 30.0,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(right: 20),
-                    child: Image.asset(
-                      'LG-LOGO.png',
-                      width: 70.0,
-                      height: 70.0,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ],
-              ),
-            ])),
-        body: Column(
-          children: [
-            SizedBox(
-              height: 30,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: ElevatedButton(
+          style: TextButton.styleFrom(
+              backgroundColor: Colors.transparent, elevation: 0),
+          onPressed: () => _scaffoldKey.currentState!.openDrawer(),
+          child: Container(
+            padding: EdgeInsets.only(left: 7),
+            child: Image.asset(
+              'assets/home.png',
+              width: 30.0,
+              height: 30.0,
+              fit: BoxFit.contain,
             ),
-            Text(
-              "LET'S COOK",
-              style: TextStyle(fontFamily: "Roboto", fontSize: 36),
+          ),
+        ),
+        actions: [
+          Container(
+            padding: EdgeInsets.only(right: 7),
+            child: Image.asset(
+              'assets/LG-LOGO.png',
+              width: 70.0,
+              height: 70.0,
+              fit: BoxFit.cover,
             ),
-            SizedBox(
-              height: 20,
+          ),
+        ],
+      ),
+      body: Column(
+        children: [
+          SizedBox(
+            height: 30,
+          ),
+          Text(
+            "LET'S COOK",
+            style: TextStyle(fontFamily: "Roboto", fontSize: 36),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Expanded(
+            child: GridView.count(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              crossAxisCount: 2,
+              crossAxisSpacing: 20,
+              mainAxisSpacing: 5,
+              children: [
+                MenuCard(
+                  name: "tomato",
+                  duration: "few days",
+                  imageUrl: "tomate.png",
+                  color: Colors.blue,
+                  Percent: 80,
+                ),
+                MenuCard(
+                  name: "tomato",
+                  duration: "few days",
+                  imageUrl: "tomate.png",
+                  color: Colors.blue,
+                  Percent: 70,
+                ),
+                MenuCard(
+                  name: "tomato",
+                  duration: "few days",
+                  imageUrl: "tomate.png",
+                  color: Colors.blue,
+                  Percent: 75,
+                ),
+                MenuCard(
+                  name: "tomato",
+                  duration: "few days",
+                  imageUrl: "tomate.png",
+                  color: Colors.blue,
+                  Percent: 20,
+                ),
+                MenuCard(
+                  name: "tomato",
+                  duration: "few days",
+                  imageUrl: "tomate.png",
+                  color: Colors.red,
+                  Percent: 10,
+                ),
+                MenuCard(
+                  name: "tomato",
+                  duration: "few days",
+                  imageUrl: "tomate.png",
+                  color: Colors.blue,
+                  Percent: 90,
+                ),
+                MenuCard(
+                  name: "tomato",
+                  duration: "few days",
+                  imageUrl: "tomate.png",
+                  color: Colors.blue,
+                  Percent: 80,
+                ),
+                MenuCard(
+                  name: "tomato",
+                  duration: "few days",
+                  imageUrl: "tomate.png",
+                  color: Colors.blue,
+                  Percent: 80,
+                ),
+                MenuCard(
+                  name: "tomato",
+                  duration: "few days",
+                  imageUrl: "tomate.png",
+                  color: Colors.blue,
+                  Percent: 80,
+                ),
+              ],
             ),
-            Expanded(
-              child: GridView.count(
-                padding: EdgeInsets.symmetric(horizontal: 15),
-                crossAxisCount: 2,
-                crossAxisSpacing: 20,
-                mainAxisSpacing: 5,
-                children: [
-                  MenuCard(
-                    name: "tomato",
-                    duration: "few days",
-                    imageUrl: "tomate.png",
-                    color: Colors.blue,
-                    Percent: 80,
-                  ),
-                  MenuCard(
-                    name: "tomato",
-                    duration: "few days",
-                    imageUrl: "tomate.png",
-                    color: Colors.blue,
-                    Percent: 70,
-                  ),
-                  MenuCard(
-                    name: "tomato",
-                    duration: "few days",
-                    imageUrl: "tomate.png",
-                    color: Colors.blue,
-                    Percent: 75,
-                  ),
-                  MenuCard(
-                    name: "tomato",
-                    duration: "few days",
-                    imageUrl: "tomate.png",
-                    color: Colors.blue,
-                    Percent: 20,
-                  ),
-                  MenuCard(
-                    name: "tomato",
-                    duration: "few days",
-                    imageUrl: "tomate.png",
-                    color: Colors.red,
-                    Percent: 10,
-                  ),
-                  MenuCard(
-                    name: "tomato",
-                    duration: "few days",
-                    imageUrl: "tomate.png",
-                    color: Colors.blue,
-                    Percent: 90,
-                  ),
-                  MenuCard(
-                    name: "tomato",
-                    duration: "few days",
-                    imageUrl: "tomate.png",
-                    color: Colors.blue,
-                    Percent: 80,
-                  ),
-                  MenuCard(
-                    name: "tomato",
-                    duration: "few days",
-                    imageUrl: "tomate.png",
-                    color: Colors.blue,
-                    Percent: 80,
-                  ),
-                  MenuCard(
-                    name: "tomato",
-                    duration: "few days",
-                    imageUrl: "tomate.png",
-                    color: Colors.blue,
-                    Percent: 80,
-                  ),
-                ],
-              ),
-            ),
-          ],
-
-
-
-
-      );
-
-        ));
-
+          ),
+        ],
+      ),
+    );
   }
 }
 

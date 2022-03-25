@@ -14,6 +14,7 @@ class _AddTaskState extends State<AddTask> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController titleController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,6 +23,34 @@ class _AddTaskState extends State<AddTask> {
         horizontal: 20,
       ),
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          leading: ElevatedButton(
+            style: TextButton.styleFrom(
+                backgroundColor: Colors.transparent, elevation: 0),
+            onPressed: () => _scaffoldKey.currentState!.openDrawer(),
+            child: Container(
+              padding: EdgeInsets.only(left: 7),
+              child: Image.asset(
+                'assets/home.png',
+                width: 30.0,
+                height: 30.0,
+                fit: BoxFit.contain,
+              ),
+            ),
+          ),
+          actions: [
+            Container(
+              padding: EdgeInsets.only(right: 7),
+              child: Image.asset(
+                'assets/LG-LOGO.png',
+                width: 70.0,
+                height: 70.0,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ],
+        ),
         backgroundColor: Colors.transparent,
         body: SingleChildScrollView(
           child: Form(

@@ -3,6 +3,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:iwd2022/Components/slidable_task.dart';
 import 'package:iwd2022/classes/task.dart';
 import 'package:iwd2022/constants.dart';
+import 'package:iwd2022/screens/Drawer.dart';
 import 'package:iwd2022/screens/add_task.dart';
 
 List<Task> currentTasks = [
@@ -42,6 +43,8 @@ class _NeedsState extends State<Needs> {
 
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<ScaffoldState> _scaffoldKey =
+        new GlobalKey<ScaffoldState>();
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -53,34 +56,41 @@ class _NeedsState extends State<Needs> {
         ),
         backgroundColor: myRed,
       ),
+      key: _scaffoldKey,
+      drawer: MyDrawer(),
       appBar: AppBar(
-          backgroundColor: Colors.white,
-          title: Column(children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //crossAxisAlignment: CrossAxisAlignment.,
-              children: [
-                Container(
-                  padding: EdgeInsets.only(left: 22),
-                  child: Image.asset(
-                    'assets/home.png',
-                    width: 30.0,
-                    height: 30.0,
-                    fit: BoxFit.contain,
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.only(right: 20),
-                  child: Image.asset(
-                    'assets/LG-LOGO.png',
-                    width: 70.0,
-                    height: 70.0,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ],
+        elevation: 0,
+        backgroundColor: Colors.white,
+        leading: ElevatedButton(
+          style: TextButton.styleFrom(
+              backgroundColor: Colors.transparent, elevation: 0),
+          onPressed: () => _scaffoldKey.currentState!.openDrawer(),
+          child: Container(
+            padding: EdgeInsets.only(left: 7),
+            child: Image.asset(
+              'assets/home.png',
+              width: 30.0,
+              height: 30.0,
+              fit: BoxFit.contain,
             ),
-          ])),
+          ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, '');
+            },
+            icon: const Icon(
+              Icons.notifications_sharp,
+              color: Color.fromARGB(255, 66, 61, 61),
+              size: 35,
+            ),
+          ),
+          const SizedBox(
+            width: 20,
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

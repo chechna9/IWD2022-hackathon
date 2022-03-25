@@ -1,80 +1,183 @@
 import "package:flutter/material.dart";
+import 'package:iwd2022/constants.dart';
+import 'package:iwd2022/screens/Drawer.dart';
 
 class MyHome extends StatefulWidget {
-  const MyHome({ Key? key }) : super(key: key);
+  const MyHome({Key? key}) : super(key: key);
 
   @override
   State<MyHome> createState() => _MyHomeState();
 }
 
 class _MyHomeState extends State<MyHome> {
-  
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(color: Color(0xff6E928E)),
-      child: Column(
-        children: [
-          SizedBox(height: 40,),
-          Padding(padding: EdgeInsets.only(left: 10 , right: 10),child:  Text("BienVenue dans votre refregirateur",textAlign: TextAlign.center,style: TextStyle(color: Colors.white,fontWeight:  FontWeight.bold , fontSize:  22),),),
-            SizedBox(height: 50,),
-            Column(
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                    padding: EdgeInsets.symmetric(vertical: 30 , horizontal: 0),
-                      width: 130,
-                      decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(15),border: Border.all(width: 2,color: Color(0xFFE5E5E5)),),
-                      child: Column(children: [
-                        Icon(Icons.production_quantity_limits , size: 34,color : Color(0XFF63BDCC)),
-                        Text("Products",style: TextStyle(fontWeight: FontWeight.bold , fontSize: 22 , color: Colors.black),)
-                      ]),
-                    ),
-                    SizedBox(width: 0,),
-                    Container(
-                      width: 130,
-                      padding: EdgeInsets.symmetric(vertical: 30 , horizontal: 0),
-                      decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(15),border: Border.all(width: 2,color: Color(0xFFE5E5E5)),),
-                      child: Column(children: [
-                        Icon(Icons.receipt , size: 34,color: Color(0XFF63BDCC),),
-                        Text("Recips",style: TextStyle(fontWeight: FontWeight.bold , fontSize: 22 , color: Colors.black),)
-                      ]),
-                    )
-                  ],
-                ),
-                SizedBox(height : 35),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      width: 130,
-                      padding: EdgeInsets.symmetric(vertical: 30 , horizontal: 0),
-                      decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(15),border: Border.all(width: 2,color: Color(0xFFE5E5E5)),),
-                      child: Column(children: [
-                        Icon(Icons.list , size: 34,color : Color(0XFF63BDCC),),
-                        Text("Needs",style: TextStyle(fontWeight: FontWeight.bold , fontSize: 22 , color: Colors.black),)
-                      ]),
-                    ),
-                    SizedBox(width: 0,),
-                    Container(
-                      width: 130,
-                      padding: EdgeInsets.symmetric(vertical: 30 , horizontal: 0),
-                      decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(15),border: Border.all(width: 2,color: Color(0xFFE5E5E5)),),
-                      child: Column(children: [
-                        Icon(Icons.science , size: 34,color : Color(0XFF63BDCC)),
-                        Text("Statistics",style: TextStyle(fontWeight: FontWeight.bold , fontSize: 22 , color: Colors.black),)
-                      ]),
-                    )
-                  ],
-                )
-              ],
-            )
+    final GlobalKey<ScaffoldState> _scaffoldKey =
+        new GlobalKey<ScaffoldState>();
+    return Scaffold(
+      key: _scaffoldKey,
+      drawer: MyDrawer(),
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        leading: ElevatedButton(
+          style: TextButton.styleFrom(
+              backgroundColor: Colors.transparent, elevation: 0),
+          onPressed: () => _scaffoldKey.currentState!.openDrawer(),
+          child: Container(
+            padding: EdgeInsets.only(left: 7),
+            child: Image.asset(
+              'assets/home.png',
+              width: 30.0,
+              height: 30.0,
+              fit: BoxFit.contain,
+            ),
+          ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, '');
+            },
+            icon: const Icon(
+              Icons.notifications_sharp,
+              color: Color.fromARGB(255, 66, 61, 61),
+              size: 35,
+            ),
+          ),
+          const SizedBox(
+            width: 20,
+          ),
         ],
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Image.asset(
+            'assets/welcomeToLG.png',
+            width: MediaQuery.of(context).size.width * 0.8,
+          ),
+          HomeRoutes(),
+          Image.asset(
+            'assets/footer.png',
+            width: MediaQuery.of(context).size.width * 0.3,
+          ),
+        ],
+      ),
+    );
+  }
+}
 
+class HomeRoutes extends StatelessWidget {
+  const HomeRoutes({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            LinkHome(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.production_quantity_limits,
+                  size: 34,
+                  color: Colors.white,
+                ),
+                title: "Ingredients"),
+            SizedBox(
+              width: 0,
+            ),
+            LinkHome(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.receipt,
+                  size: 34,
+                  color: Colors.white,
+                ),
+                title: "Recepies"),
+          ],
+        ),
+        SizedBox(height: 35),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            LinkHome(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/needs');
+                },
+                icon: const Icon(
+                  Icons.list,
+                  size: 34,
+                  color: Colors.white,
+                ),
+                title: "Needs"),
+            SizedBox(
+              width: 0,
+            ),
+            LinkHome(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.stacked_bar_chart_sharp,
+                  size: 34,
+                  color: Colors.white,
+                ),
+                title: "Statistics"),
+          ],
+        )
+      ],
+    );
+  }
+}
+
+class LinkHome extends StatelessWidget {
+  final onPressed;
+  final String title;
+  final Widget icon;
+  const LinkHome({
+    Key? key,
+    required this.onPressed,
+    required this.title,
+    required this.icon,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: TextButton.styleFrom(
+        elevation: 10,
+        shadowColor: Color.fromARGB(255, 54, 182, 221),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+        padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 0),
+        backgroundColor: myBlue,
+      ),
+      child: Container(
+        width: 150,
+        child: Column(
+          children: [
+            icon,
+            const SizedBox(
+              height: 15,
+            ),
+            Text(
+              title,
+              style: const TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 18,
+                color: Colors.black,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

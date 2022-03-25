@@ -37,49 +37,50 @@ class _SwiperCardState extends State<SwiperCard> {
             widget.imagePath,
             fit: BoxFit.fill,
             width: double.infinity,
-            height:   150,
+            height: 150,
           ),
- Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                SizedBox(height: 8,),
-                Text(
-                  widget.title,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 8,
+              ),
+              Text(
+                widget.title,
+                style: const TextStyle(
+                  fontFamily: "Roboto",
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+              Text.rich(
+                TextSpan(
+                  text: widget.index.toString(),
                   style: const TextStyle(
-                    fontFamily: "Roboto",
-                    fontWeight: FontWeight.bold,
+                    color: myRed,
                     fontSize: 20,
                   ),
+                  children: [
+                    TextSpan(
+                      text: "/${widget.length.toString()}",
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                      ),
+                    )
+                  ],
                 ),
-                Text.rich(
-                  TextSpan(
-                    text: widget.index.toString(),
-                    style: const TextStyle(
-                      color: myRed,
-                      fontSize: 20,
-                    ),
-                    children: [
-                      TextSpan(
-                        text: "/${widget.length.toString()}",
-                        style: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                LinearPercentIndicator(
-                  padding: const EdgeInsets.symmetric(horizontal: 55),
-                  // width: 100.0,
-                  lineHeight: 10.0,
-                  percent: widget.pourcentage,
-                  backgroundColor: Colors.grey,
-                  progressColor: Colors.red,
-                ),
-              ],
-            ),
-          
+              ),
+              LinearPercentIndicator(
+                padding: const EdgeInsets.symmetric(horizontal: 55),
+                // width: 100.0,
+                lineHeight: 10.0,
+                percent: widget.pourcentage,
+                backgroundColor: Colors.grey,
+                progressColor: Colors.red,
+              ),
+            ],
+          ),
         ],
       ),
     );
