@@ -19,7 +19,7 @@ void main() async {
       theme: ThemeData(
         fontFamily: "Roboto",
       ),
-      initialRoute: '/home', // initialisation de la route
+      initialRoute: '/menu', // initialisation de la route
       routes: {
         '/showRecette': (context) => showRecettes(),
         '/statistics': (context) => Statistics(),

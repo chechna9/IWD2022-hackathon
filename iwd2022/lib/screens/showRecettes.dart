@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart' as rootBundle;
 import 'package:iwd2022/classes/recette.dart';
+import 'package:iwd2022/screens/Drawer.dart';
 
 class showRecettes extends StatefulWidget {
   const showRecettes({Key? key}) : super(key: key);
@@ -13,11 +14,15 @@ class showRecettes extends StatefulWidget {
 }
 
 class _showRecettesState extends State<showRecettes> {
-  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<ScaffoldState> _scaffoldKey =
+        new GlobalKey<ScaffoldState>();
     return Scaffold(
+        drawer: MyDrawer(),
+        key: _scaffoldKey,
         appBar: AppBar(
+          elevation: 0,
           backgroundColor: Colors.white,
           leading: ElevatedButton(
             style: TextButton.styleFrom(
@@ -34,14 +39,16 @@ class _showRecettesState extends State<showRecettes> {
             ),
           ),
           actions: [
-            Container(
-              padding: EdgeInsets.only(right: 7),
-              child: Image.asset(
-                'assets/LG-LOGO.png',
-                width: 70.0,
-                height: 70.0,
-                fit: BoxFit.cover,
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.notifications_sharp,
+                color: Color.fromARGB(255, 66, 61, 61),
+                size: 35,
               ),
+            ),
+            const SizedBox(
+              width: 20,
             ),
           ],
         ),

@@ -5,12 +5,6 @@ import 'package:iwd2022/screens/Home.dart';
 import 'package:iwd2022/screens/LetsCookies.dart';
 import 'package:iwd2022/screens/menu.dart';
 
-bool toggleHome = true;
-bool togglIngr = false;
-bool togglRecep = false;
-bool togglNeeds = false;
-bool togglStat = false;
-
 class MyDrawer extends StatefulWidget {
   const MyDrawer({Key? key}) : super(key: key);
 
@@ -117,7 +111,7 @@ class _MyDrawerState extends State<MyDrawer> {
                 togglNeeds = false;
                 togglStat = true;
               });
-              Navigator.pushReplacementNamed(context, '/home');
+              Navigator.pushReplacementNamed(context, '/statistics');
             },
           ),
         ],

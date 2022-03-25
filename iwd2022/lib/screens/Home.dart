@@ -122,7 +122,9 @@ class HomeRoutes extends StatelessWidget {
               width: 0,
             ),
             LinkHome(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, "/statistics");
+                },
                 icon: const Icon(
                   Icons.stacked_bar_chart_sharp,
                   size: 34,

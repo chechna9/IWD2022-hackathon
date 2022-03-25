@@ -42,6 +42,17 @@ class _NeedsState extends State<Needs> {
   }
 
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    toggleHome = false;
+    togglIngr = false;
+    togglRecep = false;
+    togglNeeds = true;
+    togglStat = false;
+  }
+
+  @override
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> _scaffoldKey =
         new GlobalKey<ScaffoldState>();

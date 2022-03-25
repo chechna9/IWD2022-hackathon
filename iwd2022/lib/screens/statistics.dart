@@ -3,6 +3,9 @@ import 'package:charts_flutter/flutter.dart' as charts;
 
 import 'package:iwd2022/classes/statisticClass.dart';
 import 'package:iwd2022/classes/statisticchart.dart';
+import 'package:iwd2022/constants.dart';
+
+import 'Drawer.dart';
 
 class Statistics extends StatefulWidget {
   const Statistics({Key? key}) : super(key: key);
@@ -12,7 +15,17 @@ class Statistics extends StatefulWidget {
 }
 
 class _StatisticsState extends State<Statistics> {
-  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    toggleHome = false;
+    togglIngr = false;
+    togglRecep = false;
+    togglNeeds = false;
+    togglStat = true;
+  }
+
   final List<StatisticClass> data = [
     StatisticClass(
         Day: "sunday",
@@ -26,8 +39,14 @@ class _StatisticsState extends State<Statistics> {
 
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<ScaffoldState> _scaffoldKey =
+        new GlobalKey<ScaffoldState>();
     return Scaffold(
+        backgroundColor: Colors.white,
+        key: _scaffoldKey,
+        drawer: MyDrawer(),
         appBar: AppBar(
+          elevation: 0,
           backgroundColor: Colors.white,
           leading: ElevatedButton(
             style: TextButton.styleFrom(
@@ -44,14 +63,16 @@ class _StatisticsState extends State<Statistics> {
             ),
           ),
           actions: [
-            Container(
-              padding: EdgeInsets.only(right: 7),
-              child: Image.asset(
-                'assets/LG-LOGO.png',
-                width: 70.0,
-                height: 70.0,
-                fit: BoxFit.cover,
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.notifications_sharp,
+                color: Color.fromARGB(255, 66, 61, 61),
+                size: 35,
               ),
+            ),
+            const SizedBox(
+              width: 20,
             ),
           ],
         ),
