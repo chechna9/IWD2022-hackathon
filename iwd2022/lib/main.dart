@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:iwd2022/screens/DetailRecette.dart';
 import 'package:iwd2022/screens/Drawer.dart';
 import 'package:iwd2022/screens/Home.dart';
 import 'package:iwd2022/screens/LetsCookies.dart';
+import 'package:iwd2022/screens/test_swiper.dart';
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: "rfg",),
     );
   }
 }
@@ -31,17 +32,43 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+ final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
 
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      key: _scaffoldKey,
+       appBar:  AppBar(
+       backgroundColor: Colors.white,
+       leading: ElevatedButton(
+         style: TextButton.styleFrom(backgroundColor: Colors.transparent,elevation: 0),
+         
+         onPressed: () => _scaffoldKey.currentState!.openDrawer(),
+         child: Container(
+           padding: EdgeInsets.only(left: 7),
+                     child : Image.asset(
+                                     'home.png',
+                                     width: 30.0,
+                                      height: 30.0,
+                                      fit: BoxFit.contain,    
+                                       ),
+                                       ),
+       ) ,
+      actions: [ Container(
+        padding: EdgeInsets.only(right: 7),
+                      child :Image.asset(
+                                   'LG-LOGO.png',
+                                   width: 70.0,
+                                    height: 70.0,
+                                    fit: BoxFit.cover,
+                               
+                                     ),
+                    ),],
+
+       ),
+      body: DetailRecette(),
       
-      appBar: AppBar(
-        title: Text("Flutter Learning"),
-  ),
-      body:Center(
-        child: MyHome()
-      ),
   drawer : MyDrawer()
     );
   }
