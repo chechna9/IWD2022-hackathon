@@ -3,7 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart' as rootBundle;
-import 'package:iwd_2022/classes/recette.dart';
+import 'package:iwd2022/classes/recette.dart';
+
 class showRecettes extends StatefulWidget {
   const showRecettes({ Key? key }) : super(key: key);
 
@@ -67,7 +68,7 @@ class _showRecettesState extends State<showRecettes> {
     );
 }
 Future<List<ProductDataModel>>ReadJsonData() async{
-     final jsondata = await rootBundle.rootBundle.loadString("./files/recette.json");
+     final jsondata = await rootBundle.rootBundle.loadString('jsonfile/productlist.json');
      final list = json.decode(jsondata) as List<dynamic>;
 
      return list.map((e) => ProductDataModel.fromJson(e)).toList();
