@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+
 import 'package:iwd2022/screens/menu.dart';
+import 'package:iwd2022/screens/needs.dart';
 import 'package:iwd2022/screens/showRecettes.dart';
 import 'package:iwd2022/screens/statistics.dart';
 void main()async  {
@@ -20,5 +22,7 @@ void main()async  {
            Statistics(),
 '/menu': (context) =>
            MenuList(),
-      '/needs': (context) => Needs(),
+      '/needs': (context) => const Needs()
+    }));}
+      
 
