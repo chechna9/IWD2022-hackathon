@@ -18,6 +18,18 @@ class _TestSwiperState extends State<TestSwiper> {
         imageURL: "assets/soup1.png",
         ingredient: "ingredient",
         name: "Soupe Portugaise"),
+    ProductDataModel(
+        category: "Soupe",
+        description: "Description",
+        imageURL: "assets/soup1.png",
+        ingredient: "ingredient",
+        name: "Soupe Portugaise"),
+    ProductDataModel(
+        category: "Soupe",
+        description: "Description",
+        imageURL: "assets/soup1.png",
+        ingredient: "ingredient",
+        name: "Soupe Portugaise"),
   ];
   @override
   Widget build(BuildContext context) {
@@ -30,7 +42,9 @@ class _TestSwiperState extends State<TestSwiper> {
           itemBuilder: ((context, index, realIndex) => SwiperCard(
                 imagePath: recepies[index].imageURL!,
                 title: recepies[index].name!,
-                index: index,
+                index: index + 1,
+                length: recepies.length,
+                pourcentage: 0.25, // between 0 and 1
               )),
           options: CarouselOptions(
             autoPlay: true,
