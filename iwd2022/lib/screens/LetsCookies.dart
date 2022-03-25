@@ -17,16 +17,17 @@ class _LetsCookiesState extends State<LetsCookies> {
       barrierColor: Colors.white.withOpacity(0),
         isDismissible: false,
         enableDrag: false,
-        
+        isScrollControlled:true,
         elevation: 0,
         context: ctx,
-        builder: (ctx) => Container(
+        builder: (ctx) => FractionallySizedBox(
+        heightFactor: 0.63,child: Container(
               width: 300,
-              height: 1000,
+              height: 800,
               color: Colors.white54,
               alignment: Alignment.center,
               child: const MyBottonSheet()
-            ));
+            )));
   }
 
 

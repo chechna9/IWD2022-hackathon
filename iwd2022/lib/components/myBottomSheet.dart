@@ -27,7 +27,7 @@ class _MyBottonSheetState extends State<MyBottonSheet> {
           ],),),
           SizedBox(height: 5,),
           Expanded(child:  Container(
-            decoration: BoxDecoration(color: Color(0xFFE5E5E5),borderRadius: BorderRadius.only(topLeft: Radius.circular((50)),topRight: Radius.circular(50))),
+            decoration: BoxDecoration(color: Color.fromARGB(209, 235, 233, 233),borderRadius: BorderRadius.only(topLeft: Radius.circular((50)),topRight: Radius.circular(50))),
             child: Column(
               crossAxisAlignment : CrossAxisAlignment.center,
               children: [
@@ -37,7 +37,7 @@ class _MyBottonSheetState extends State<MyBottonSheet> {
                   fontSize: 28,
                 ),),
                 SizedBox(
-                  height: 20,
+                  height: 30,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -49,9 +49,9 @@ class _MyBottonSheetState extends State<MyBottonSheet> {
 
                     ],),
                     Column(children: [
-                      Text("Lunch",style: TextStyle(fontWeight: FontWeight.w600,),),
+                      Text("Lunch",style: TextStyle(fontWeight: FontWeight.w600,color: Color(0xffC40552)),),
                       SizedBox(height: 2,),
-                      Container(width: 12 ,height: 3,color: Colors.black,)
+                      Container(width: 12 ,height: 3,color: Color(0xffC40552),)
 
                     ],),
                     Column(children: [
