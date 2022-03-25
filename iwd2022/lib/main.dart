@@ -13,7 +13,8 @@ void main() async {
     theme: ThemeData(
       fontFamily: "Roboto",
     ),
-    initialRoute: '/testSwiper', // initialisation de la route
+    initialRoute: '/menu', // initialisation de la route
+
     routes: {
 
 '/showRecette': (context) =>
@@ -22,8 +23,12 @@ void main() async {
            Statistics(),
 '/menu': (context) =>
            MenuList(),
-      '/needs': (context) => const Needs()
-    }));}
+ '/needs': (context) => Needs(),
+}));
+}
+
       
+      
+
 
 
