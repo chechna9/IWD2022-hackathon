@@ -8,17 +8,15 @@ import 'package:iwd2022/screens/test_swiper.dart';
 
 void main() async {
   runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    theme: ThemeData(
-      fontFamily: "Roboto",
-    ),
-    initialRoute: '/needs', // initialisation de la route
-    routes: {
-      '/showRecette': (context) => showRecettes(),
-      '/statistics': (context) => Statistics(),
-      '/menu': (context) => MenuList(),
-      '/needs': (context) => Needs(),
-      '/testSwiper': (context) => TestSwiper(),
-    },
-  ));
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        fontFamily: "Roboto",
+      ),
+      initialRoute: '/needs', // initialisation de la route
+      routes: {
+        '/showRecette': (context) => showRecettes(),
+        '/statistics': (context) => Statistics(),
+        '/menu': (context) => MenuList(),
+        '/needs': (context) => const Needs()
+      }));
 }
