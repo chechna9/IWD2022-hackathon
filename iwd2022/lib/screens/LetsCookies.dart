@@ -1,5 +1,8 @@
 // ignore: file_names
+import 'dart:async';
+
 import "package:flutter/material.dart";
+import 'package:flutter/scheduler.dart';
 import 'package:iwd2022/components/myBottomSheet.dart';
 
 class LetsCookies extends StatefulWidget {
@@ -11,6 +14,7 @@ class LetsCookies extends StatefulWidget {
 
 class _LetsCookiesState extends State<LetsCookies> {
 
+  var isModal = true ;
   
   void _show(BuildContext ctx) {
     showModalBottomSheet(
@@ -30,7 +34,15 @@ class _LetsCookiesState extends State<LetsCookies> {
             )));
   }
 
-
+ @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+      Timer.run(() {
+          _show(context);
+  });
+    
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -103,6 +115,7 @@ class _LetsCookiesState extends State<LetsCookies> {
 
 
     ],)
+    
       ],
     ) ;
   }

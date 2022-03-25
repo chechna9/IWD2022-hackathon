@@ -1,5 +1,11 @@
 // ignore: file_names
+import 'package:carousel_slider/carousel_slider.dart';
 import "package:flutter/material.dart";
+import 'package:iwd2022/classes/recette.dart';
+import 'package:iwd2022/components/swiper_card.dart';
+import 'package:iwd2022/screens/LetsCookies.dart';
+import 'package:iwd2022/screens/menu.dart';
+import 'package:iwd2022/screens/test_swiper.dart';
 
 class MyBottonSheet extends StatefulWidget {
   const MyBottonSheet({ Key? key }) : super(key: key);
@@ -9,6 +15,28 @@ class MyBottonSheet extends StatefulWidget {
 }
 
 class _MyBottonSheetState extends State<MyBottonSheet> {
+    List<ProductDataModel> recepies = [
+    ProductDataModel(
+        category: "Soupe",
+        description: "Description",
+        imageURL: "assets/soup1.png",
+        ingredient: "ingredient",
+        name: "Soupe Portugaise"),
+    ProductDataModel(
+        category: "Soupe",
+        description: "Description",
+        imageURL: "assets/soup1.png",
+        ingredient: "ingredient",
+        name: "Soupe Portugaise"),
+    ProductDataModel(
+        category: "Soupe",
+        description: "Description",
+        imageURL: "assets/soup1.png",
+        ingredient: "ingredient",
+        name: "Soupe Portugaise"),
+  ];
+
+
   @override
   Widget build(BuildContext context) {
     // ignore: avoid_unnecessary_containers
@@ -17,7 +45,11 @@ class _MyBottonSheetState extends State<MyBottonSheet> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           // ignore: prefer_const_literals_to_create_immutables
-          TextButton(onPressed: ()=>{Navigator.pop(context)}, child: Row(
+          TextButton(              onPressed: () {
+                  Navigator.of(context).pop();
+                  Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => MenuList()));
+              }, child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               // ignore: prefer_const_literals_to_create_immutables
               children: [
@@ -59,14 +91,14 @@ class _MyBottonSheetState extends State<MyBottonSheet> {
                       SizedBox(height: 2,),
                       Container(width: 12 ,height: 3,color: Colors.black,)
                     ],),
-                                        Column(children: [
+                    Column(children: [
                       Text("Dessert",style: TextStyle(fontWeight: FontWeight.w600,),),
                       SizedBox(height: 2,),
                       Container(width: 12 ,height: 3,color: Colors.black,)
-
-                    ],),   
-                  ],
-                )
+                    ],),                
+                  ],                 
+                ),
+                  TestSwiper()
             ]),
           ))
          

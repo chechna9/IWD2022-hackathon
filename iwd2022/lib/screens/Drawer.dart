@@ -1,5 +1,8 @@
 // ignore: file_names
 import "package:flutter/material.dart";
+import 'package:iwd2022/screens/Home.dart';
+import 'package:iwd2022/screens/LetsCookies.dart';
+import 'package:iwd2022/screens/menu.dart';
 
 class MyDrawer extends StatefulWidget {
   const MyDrawer({ Key? key }) : super(key: key);
@@ -61,8 +64,10 @@ class _MyDrawerState extends State<MyDrawer> {
             title: const Text("Home",style: TextStyle(color: Colors.black ,fontWeight: FontWeight.w600),),
             leading: IconButton(
               icon: const Icon(Icons.home),
-              onPressed: () {
-                Navigator.of(context).pop();
+                            onPressed: () {
+                  Navigator.of(context).pop();
+                  Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => MyHome()));
               },
             ),
             onTap: ()
@@ -72,23 +77,33 @@ class _MyDrawerState extends State<MyDrawer> {
             color: Colors.grey,
           ),
           ListTile(
-            title: Text("profile",style: TextStyle(color: Colors.black ,fontWeight: FontWeight.w600),),
+            title: Text("Ingredient",style: TextStyle(color: Colors.black ,fontWeight: FontWeight.w600),),
             leading: IconButton(
-              icon: Icon(Icons.account_box),
+              icon: Icon(Icons.production_quantity_limits),
               onPressed: () {
+                  Navigator.of(context).pop();
+                  Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => MenuList()));
               },
             ),
             onTap: ()
-            {},
+            {
+                Navigator.of(context).pop();
+                  Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => MenuList()));
+            },
           ),
           const Divider(
             color: Colors.grey,
           ),
           ListTile(
-            title: const Text("shopping",style: TextStyle(color: Colors.black ,fontWeight: FontWeight.w600),),
+            title: const Text("cookies",style: TextStyle(color: Colors.black ,fontWeight: FontWeight.w600),),
             leading: IconButton(
               icon: const Icon(Icons.shopping_bag),
-              onPressed: () {
+                            onPressed: () {
+                  Navigator.of(context).pop();
+                  Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => LetsCookies()));
               },
             ),
             onTap: ()

@@ -11,6 +11,9 @@ class MenuList extends StatefulWidget {
 class _MenuListState extends State<MenuList> {
   @override
   Widget build(BuildContext context) {
+
+    return Column(
+
     return Scaffold(
         appBar: AppBar(
             backgroundColor: Colors.white,
@@ -126,7 +129,14 @@ class _MenuListState extends State<MenuList> {
               ),
             ),
           ],
+
+
+
+
+      );
+
         ));
+
   }
 }
 
