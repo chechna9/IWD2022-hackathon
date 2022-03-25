@@ -31,19 +31,18 @@ class _SwiperCardState extends State<SwiperCard> {
         color: Colors.white,
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Image.asset(
             widget.imagePath,
             fit: BoxFit.fill,
             width: double.infinity,
-            height: 150,
+            height:   150,
           ),
-          Expanded(
-            flex: 2,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+ Column(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
+                SizedBox(height: 8,),
                 Text(
                   widget.title,
                   style: const TextStyle(
@@ -80,7 +79,7 @@ class _SwiperCardState extends State<SwiperCard> {
                 ),
               ],
             ),
-          )
+          
         ],
       ),
     );

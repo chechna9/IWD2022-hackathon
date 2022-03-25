@@ -33,9 +33,7 @@ class _TestSwiperState extends State<TestSwiper> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Container(
+    return  Container(
         margin: EdgeInsets.only(top: 20),
         child: CarouselSlider.builder(
           itemCount: recepies.length,
@@ -49,11 +47,9 @@ class _TestSwiperState extends State<TestSwiper> {
           options: CarouselOptions(
             autoPlay: true,
             viewportFraction: 0.5,
-            height: 300,
+            height: 270,
             enlargeCenterPage: true,
           ),
-        ),
-      ),
-    );
+        ));
   }
 }
