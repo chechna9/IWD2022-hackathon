@@ -15,6 +15,7 @@ class _MyHomeState extends State<MyHome> {
     final GlobalKey<ScaffoldState> _scaffoldKey =
         new GlobalKey<ScaffoldState>();
     return Scaffold(
+      backgroundColor: Colors.white,
       key: _scaffoldKey,
       drawer: MyDrawer(),
       appBar: AppBar(
@@ -36,9 +37,7 @@ class _MyHomeState extends State<MyHome> {
         ),
         actions: [
           IconButton(
-            onPressed: () {
-              Navigator.pushReplacementNamed(context, '');
-            },
+            onPressed: () {},
             icon: const Icon(
               Icons.notifications_sharp,
               color: Color.fromARGB(255, 66, 61, 61),
@@ -56,7 +55,8 @@ class _MyHomeState extends State<MyHome> {
         children: [
           Image.asset(
             'assets/welcomeToLG.png',
-            width: MediaQuery.of(context).size.width * 0.8,
+            width: MediaQuery.of(context).size.width * 0.7,
+            fit: BoxFit.scaleDown,
           ),
           HomeRoutes(),
           Image.asset(
