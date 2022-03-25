@@ -1,48 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:iwd2022/screens/Drawer.dart';
-import 'package:iwd2022/screens/Home.dart';
-import 'package:iwd2022/screens/LetsCookies.dart';
-void main() {
-  runApp(const MyApp());
-}
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
+import 'package:iwd2022/screens/menu.dart';
+import 'package:iwd2022/screens/needs.dart';
+import 'package:iwd2022/screens/showRecettes.dart';
+import 'package:iwd2022/screens/statistics.dart';
+void main()async  {
+ 
+   
+ runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    theme: ThemeData(
+      fontFamily: "Roboto",
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-  @override
-  Widget build(BuildContext context) {
-    return  Scaffold(
+    ),
+    initialRoute: '/needs', // initialisation de la route
+    routes: {
+'/showRecette': (context) =>
+           showRecettes(),  
+'/statistics': (context) =>
+           Statistics(),
+'/menu': (context) =>
+           MenuList(),
+      '/needs': (context) => const Needs()
+    }));}
       
-      appBar: AppBar(
-        title: Text("Flutter Learning"),
-  ),
-      body:Center(
-        child:MyHome()
-      ),
-  drawer : MyDrawer()
-    );
-  }
-}
+
