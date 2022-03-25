@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:iwd2022/classes/task.dart';
+import 'package:iwd2022/constants.dart';
 
 class SlidableTask extends StatefulWidget {
   final List<SlidableAction> actions;
@@ -26,18 +27,41 @@ class _SlidableTaskState extends State<SlidableTask> {
         motion: const ScrollMotion(),
         children: widget.actions,
       ),
-      child: ListTile(
-        trailing: Icon(Icons.swap_horiz),
-        onTap: () => showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-            title: const Text("Description"),
-            content: Text(widget.task.description),
-          ),
+      child: Center(
+        child: Column(
+          children: [
+            ListTile(
+              subtitle: Text(
+                widget.task.description,
+                maxLines: 1,
+              ),
+              trailing: const Icon(
+                Icons.keyboard_double_arrow_left_rounded,
+                color: myRed,
+              ),
+              onTap: () => showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  title: Text(widget.task.title),
+                  content: Text(widget.task.description),
+                ),
+              ),
+              leading: const Icon(
+                Icons.playlist_add_check_outlined,
+                size: 35,
+              ),
+              title: Text(widget.task.title),
+              // tileColor: Colors.blueAccent,
+            ),
+            const Divider(
+              indent: 20,
+              endIndent: 20,
+              color: Colors.grey,
+              height: 2,
+              thickness: 1,
+            ),
+          ],
         ),
-        leading: const Icon(Icons.message),
-        title: Text(widget.task.title),
-        // tileColor: Colors.blueAccent,
       ),
     );
   }

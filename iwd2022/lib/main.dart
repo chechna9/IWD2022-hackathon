@@ -7,7 +7,8 @@ import 'package:iwd2022/screens/statistics.dart';
 import 'package:iwd2022/screens/test_swiper.dart';
 
 void main() async {
-  runApp(MaterialApp(
+  runApp(
+    MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: "Roboto",
@@ -18,5 +19,7 @@ void main() async {
         '/statistics': (context) => Statistics(),
         '/menu': (context) => MenuList(),
         '/needs': (context) => const Needs()
-      }));
+      },
+    ),
+  );
 }
