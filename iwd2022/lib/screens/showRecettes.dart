@@ -34,15 +34,10 @@ class _showRecettesState extends State<showRecettes> {
           leading: ElevatedButton(
             style: TextButton.styleFrom(
                 backgroundColor: Colors.transparent, elevation: 0),
-            onPressed: () => _scaffoldKey.currentState!.openDrawer(),
+            onPressed: () => Navigator.pushReplacementNamed(context, "/showRecette"),
             child: Container(
               padding: EdgeInsets.only(left: 7),
-              child: Image.asset(
-                'assets/home.png',
-                width: 30.0,
-                height: 30.0,
-                fit: BoxFit.contain,
-              ),
+              child: Icon(Icons.arrow_back,size: 28,color: Colors.black,) 
             ),
           ),
           actions: [

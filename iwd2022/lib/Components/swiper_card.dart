@@ -43,49 +43,51 @@ class _SwiperCardState extends State<SwiperCard> {
               width: double.infinity,
               height: 150,
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 8,
-                ),
-                Text(
-                  widget.title,
-                  style: const TextStyle(
-                    fontFamily: "Roboto",
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 8,
                   ),
-                ),
-                SizedBox(height: 4,),
-                Text.rich(
-                  TextSpan(
-                    text: widget.index.toString(),
+                  Text(
+                    widget.title,
                     style: const TextStyle(
-                      color: myRed,
+                      fontFamily: "Roboto",
+                      fontWeight: FontWeight.bold,
                       fontSize: 20,
                     ),
-                    children: [
-                      TextSpan(
-                        text: "/${widget.length.toString()}",
-                        style: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                        ),
-                      )
-                    ],
                   ),
-                ),
-                SizedBox(height: 3,),
-                LinearPercentIndicator(
-                  padding: const EdgeInsets.symmetric(horizontal: 55),
-                  // width: 100.0,
-                  lineHeight: 10.0,
-                  percent: widget.pourcentage,
-                  backgroundColor: Colors.grey,
-                  progressColor: Colors.red,
-                ),
-              ],
+                  SizedBox(height: 4,),
+                  Text.rich(
+                    TextSpan(
+                      text: widget.index.toString(),
+                      style: const TextStyle(
+                        color: myRed,
+                        fontSize: 20,
+                      ),
+                      children: [
+                        TextSpan(
+                          text: "/${widget.length.toString()}",
+                          style: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 3,),
+                  LinearPercentIndicator(
+                    padding: const EdgeInsets.symmetric(horizontal: 55),
+                    // width: 100.0,
+                    lineHeight: 10.0,
+                    percent: widget.pourcentage,
+                    backgroundColor: Colors.grey,
+                    progressColor: Colors.red,
+                  ),
+                ],
+              ),
             ),
           ],
         ),

@@ -135,14 +135,14 @@ class _LetsCookiesState extends State<LetsCookies> {
                   child: Row(
                     children: [
                       Image(
-                        image: AssetImage("assets/tomato.png"),
+                        image: AssetImage("assets/LGM4.png"),
                         height: 25,
                         width: 25,
                         fit: BoxFit.cover,
                       ),
                       SizedBox(width: 12),
                       Text(
-                        "Tomato",
+                        "Cucumber",
                         style: TextStyle(
                             fontSize: 10,
                             fontWeight: FontWeight.bold,
@@ -167,14 +167,14 @@ class _LetsCookiesState extends State<LetsCookies> {
                   child: Row(
                     children: [
                       Image(
-                        image: AssetImage("assets/tomato.png"),
+                        image: AssetImage("assets/LGM3.png"),
                         height: 25,
                         width: 25,
                         fit: BoxFit.cover,
                       ),
                       SizedBox(width: 12),
                       Text(
-                        "Tomato",
+                        "Onions",
                         style: TextStyle(
                             fontSize: 10,
                             fontWeight: FontWeight.bold,
@@ -191,14 +191,14 @@ class _LetsCookiesState extends State<LetsCookies> {
                   child: Row(
                     children: [
                       Image(
-                        image: AssetImage("assets/tomato.png"),
+                        image: AssetImage("assets/lgm1.png"),
                         height: 25,
                         width: 25,
                         fit: BoxFit.cover,
                       ),
                       SizedBox(width: 12),
                       Text(
-                        "Tomato",
+                        "Pepper",
                         style: TextStyle(
                             fontSize: 10,
                             fontWeight: FontWeight.bold,
