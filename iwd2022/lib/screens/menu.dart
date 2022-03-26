@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iwd2022/screens/Drawer.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
 class MenuList extends StatefulWidget {
@@ -12,35 +13,43 @@ class _MenuListState extends State<MenuList> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
+        final GlobalKey<ScaffoldState> _scaffoldKey =
+        new GlobalKey<ScaffoldState>();
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: ElevatedButton(
-          style: TextButton.styleFrom(
-              backgroundColor: Colors.transparent, elevation: 0),
-          onPressed: () => _scaffoldKey.currentState!.openDrawer(),
-          child: Container(
-            padding: EdgeInsets.only(left: 7),
-            child: Image.asset(
-              'assets/home.png',
-              width: 30.0,
-              height: 30.0,
-              fit: BoxFit.contain,
+              backgroundColor: Colors.white,
+        key: _scaffoldKey,
+        drawer: MyDrawer(),
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.white,
+          leading: ElevatedButton(
+            style: TextButton.styleFrom(
+                backgroundColor: Colors.transparent, elevation: 0),
+            onPressed: () => _scaffoldKey.currentState!.openDrawer(),
+            child: Container(
+              padding: EdgeInsets.only(left: 7),
+              child: Image.asset(
+                'assets/home.png',
+                width: 30.0,
+                height: 30.0,
+                fit: BoxFit.contain,
+              ),
             ),
           ),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.notifications_sharp,
+                color: Color.fromARGB(255, 66, 61, 61),
+                size: 35,
+              ),
+            ),
+            const SizedBox(
+              width: 20,
+            ),
+          ],
         ),
-        actions: [
-          Container(
-            padding: EdgeInsets.only(right: 7),
-            child: Image.asset(
-              'assets/LG-LOGO.png',
-              width: 70.0,
-              height: 70.0,
-              fit: BoxFit.cover,
-            ),
-          ),
-        ],
-      ),
       body: Column(
         children: [
           SizedBox(
@@ -68,51 +77,51 @@ class _MenuListState extends State<MenuList> {
                   Percent: 80,
                 ),
                 MenuCard(
-                  name: "tomato",
+                  name: "botato",
                   duration: "few days",
-                  imageUrl: "tomate.png",
+                  imageUrl: "LGM5.png",
                   color: Colors.blue,
                   Percent: 70,
                 ),
                 MenuCard(
-                  name: "tomato",
+                  name: "cucumber",
                   duration: "few days",
-                  imageUrl: "tomate.png",
+                  imageUrl: "LGM4.png",
                   color: Colors.blue,
                   Percent: 75,
                 ),
                 MenuCard(
-                  name: "tomato",
+                  name: "poiraux",
                   duration: "few days",
-                  imageUrl: "tomate.png",
+                  imageUrl: "LGM2.png",
                   color: Colors.blue,
                   Percent: 20,
                 ),
                 MenuCard(
-                  name: "tomato",
+                  name: "pepper",
                   duration: "few days",
-                  imageUrl: "tomate.png",
+                  imageUrl: "lgm1.png",
                   color: Colors.red,
                   Percent: 10,
                 ),
                 MenuCard(
-                  name: "tomato",
+                  name: "Fraise",
                   duration: "few days",
-                  imageUrl: "tomate.png",
+                  imageUrl: "LGM7.jpg",
                   color: Colors.blue,
                   Percent: 90,
                 ),
                 MenuCard(
-                  name: "tomato",
+                  name: "onions",
                   duration: "few days",
-                  imageUrl: "tomate.png",
+                  imageUrl: "LGM3.png",
                   color: Colors.blue,
                   Percent: 80,
                 ),
                 MenuCard(
-                  name: "tomato",
+                  name: "grapes",
                   duration: "few days",
-                  imageUrl: "tomate.png",
+                  imageUrl: "LGM6.jpg",
                   color: Colors.blue,
                   Percent: 80,
                 ),

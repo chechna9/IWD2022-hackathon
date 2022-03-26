@@ -24,64 +24,73 @@ class SwiperCard extends StatefulWidget {
 class _SwiperCardState extends State<SwiperCard> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 200,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        color: Colors.white,
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Image.asset(
-            widget.imagePath,
-            fit: BoxFit.fill,
-            width: double.infinity,
-            height: 150,
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 8,
-              ),
-              Text(
-                widget.title,
-                style: const TextStyle(
-                  fontFamily: "Roboto",
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
-              ),
-              Text.rich(
-                TextSpan(
-                  text: widget.index.toString(),
-                  style: const TextStyle(
-                    color: myRed,
-                    fontSize: 20,
+    return GestureDetector(
+      onTap: (){
+        Navigator.pushReplacementNamed(context, "/detailRecette");
+      },
+      child: Container(
+        width: 200,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          color: Colors.white,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Image.asset(
+              widget.imagePath,
+              fit: BoxFit.fill,
+              width: double.infinity,
+              height: 150,
+            ),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 8,
                   ),
-                  children: [
+                  Text(
+                    widget.title,
+                    style: const TextStyle(
+                      fontFamily: "Roboto",
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                  SizedBox(height: 4,),
+                  Text.rich(
                     TextSpan(
-                      text: "/${widget.length.toString()}",
+                      text: widget.index.toString(),
                       style: const TextStyle(
-                        color: Colors.black,
+                        color: myRed,
                         fontSize: 20,
                       ),
-                    )
-                  ],
-                ),
+                      children: [
+                        TextSpan(
+                          text: "/${widget.length.toString()}",
+                          style: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 3,),
+                  LinearPercentIndicator(
+                    padding: const EdgeInsets.symmetric(horizontal: 55),
+                    // width: 100.0,
+                    lineHeight: 10.0,
+                    percent: widget.pourcentage,
+                    backgroundColor: Colors.grey,
+                    progressColor: Colors.red,
+                  ),
+                ],
               ),
-              LinearPercentIndicator(
-                padding: const EdgeInsets.symmetric(horizontal: 55),
-                // width: 100.0,
-                lineHeight: 10.0,
-                percent: widget.pourcentage,
-                backgroundColor: Colors.grey,
-                progressColor: Colors.red,
-              ),
-            ],
-          ),
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }

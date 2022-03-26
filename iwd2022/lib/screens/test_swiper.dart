@@ -15,19 +15,19 @@ class _TestSwiperState extends State<TestSwiper> {
     ProductDataModel(
         category: "Soupe",
         description: "Description",
-        imageURL: "assets/soup1.png",
+        imageURL: "assets/recette1.jpg",
         ingredient: "ingredient",
         name: "Soupe Portugaise"),
     ProductDataModel(
         category: "Soupe",
         description: "Description",
-        imageURL: "assets/soup1.png",
+        imageURL: "assets/recette2.jpg",
         ingredient: "ingredient",
         name: "Soupe Portugaise"),
     ProductDataModel(
         category: "Soupe",
         description: "Description",
-        imageURL: "assets/soup1.png",
+        imageURL: "assets/recette3.jpg",
         ingredient: "ingredient",
         name: "Soupe Portugaise"),
   ];
@@ -47,7 +47,7 @@ class _TestSwiperState extends State<TestSwiper> {
           options: CarouselOptions(
             autoPlay: true,
             viewportFraction: 0.5,
-            height: 270,
+            height: 290,
             enlargeCenterPage: true,
           ),
         ));

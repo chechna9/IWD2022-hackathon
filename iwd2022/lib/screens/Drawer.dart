@@ -57,7 +57,7 @@ class _MyDrawerState extends State<MyDrawer> {
                 togglNeeds = false;
                 togglStat = false;
               });
-              Navigator.pushReplacementNamed(context, '/home');
+              Navigator.pushReplacementNamed(context, '/menu');
             },
           ),
           const SizedBox(
@@ -75,7 +75,7 @@ class _MyDrawerState extends State<MyDrawer> {
                 togglNeeds = false;
                 togglStat = false;
               });
-              Navigator.pushReplacementNamed(context, '/home');
+              Navigator.pushReplacementNamed(context, '/showRecette');
             },
           ),
           const SizedBox(

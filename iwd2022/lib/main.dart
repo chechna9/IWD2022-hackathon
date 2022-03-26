@@ -1,6 +1,8 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 
-import 'package:iwd2022/screens/DetailRecette.dart';
+import 'package:iwd2022/screens/showRecettes.dart';
 import 'package:iwd2022/screens/Drawer.dart';
 import 'package:iwd2022/screens/Home.dart';
 import 'package:iwd2022/screens/LetsCookies.dart';
@@ -21,11 +23,12 @@ void main() async {
       ),
       initialRoute: '/home', // initialisation de la route
       routes: {
-        '/showRecette': (context) => showRecettes(),
+        '/showRecette': (context) => LetsCookies(),
         '/statistics': (context) => Statistics(),
         '/menu': (context) => MenuList(),
         '/needs': (context) => Needs(),
         '/home': (context) => MyHome(),
+        '/detailRecette' : (context) => showRecettes()
       },
     ),
   );
