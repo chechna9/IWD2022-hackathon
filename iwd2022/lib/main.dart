@@ -20,9 +20,9 @@ void main() async {
       theme: ThemeData(
         fontFamily: "Roboto",
       ),
-      initialRoute: '/home', // initialisation de la route
+      initialRoute: '/splashScreen', // initialisation de la route
       routes: {
-        'splashScreen': (context) => SplashScreen(),
+        '/splashScreen': (context) => SplashScreen(),
         '/showRecette': (context) => LetsCookies(),
         '/statistics': (context) => Statistics(),
         '/menu': (context) => MenuList(),

@@ -49,7 +49,7 @@ class _SplashScreenState extends State<SplashScreen>
           padding: EdgeInsets.symmetric(horizontal: 80),
           color: Colors.white,
           child: Image.asset(
-            'assets/outlinedLogo.png',
+            'assets/LG-LOGO.png',
             fit: BoxFit.scaleDown,
           ),
         ),

@@ -6,6 +6,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:iwd2022/components/myBottomSheet.dart';
 import 'package:iwd2022/constants.dart';
 import 'package:iwd2022/screens/Drawer.dart';
+import 'package:iwd2022/screens/menu.dart';
 
 class LetsCookies extends StatefulWidget {
   const LetsCookies({Key? key}) : super(key: key);
@@ -18,6 +19,9 @@ class _LetsCookiesState extends State<LetsCookies> {
   var isModal = true;
 
   void _show(BuildContext ctx) {
+    setState(() {
+      isModal = true;
+    });
     showModalBottomSheet(
       barrierColor: Colors.white.withOpacity(0),
       isDismissible: true,
@@ -26,7 +30,7 @@ class _LetsCookiesState extends State<LetsCookies> {
       elevation: 0,
       context: ctx,
       builder: (ctx) => FractionallySizedBox(
-        heightFactor: 0.65,
+        heightFactor: 0.60,
         child: Container(
           width: 300,
           height: 500,
@@ -231,7 +235,77 @@ class _LetsCookiesState extends State<LetsCookies> {
                 ],
               ),
             ],
-          )
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+              Navigator.pushNamed(context, '/menu');
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              // ignore: prefer_const_literals_to_create_immutables
+              children: [
+                const Text(
+                  "16 ingredient",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16),
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                const Icon(Icons.arrow_right_alt,
+                    color: Colors.redAccent, size: 18)
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          Text(
+            "Les ingredients disponibles pour cette recette :",
+            style: TextStyle(
+                fontSize: 13, fontWeight: FontWeight.bold, color: Colors.black),
+          ),
+          Expanded(
+              child: GridView.count(
+            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 0),
+            crossAxisCount: 2,
+            crossAxisSpacing: 20,
+            mainAxisSpacing: 4,
+            children: [
+              MenuCard(
+                name: "tomato",
+                duration: "few days",
+                imageUrl: "assets/tomate.png",
+                color: Colors.blue,
+                Percent: 80,
+              ),
+              MenuCard(
+                name: "cucumber",
+                duration: "few days",
+                imageUrl: "assets/LGM4.png",
+                color: Colors.blue,
+                Percent: 80,
+              ),
+              MenuCard(
+                name: "onions",
+                duration: "few days",
+                imageUrl: "assets/LGM3.png",
+                color: Colors.blue,
+                Percent: 70,
+              ),
+              MenuCard(
+                name: "pepper",
+                duration: "few days",
+                imageUrl: "assets/lgm1.png",
+                color: Colors.blue,
+                Percent: 75,
+              ),
+            ],
+          )),
         ],
       ),
     );

@@ -45,7 +45,7 @@ class _TestSwiperState extends State<TestSwiper> {
                 pourcentage: 0.25, // between 0 and 1
               )),
           options: CarouselOptions(
-            autoPlay: true,
+            autoPlay: false,
             viewportFraction: 0.5,
             height: 290,
             enlargeCenterPage: true,
