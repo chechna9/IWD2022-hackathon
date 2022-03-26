@@ -53,12 +53,22 @@ class _MyHomeState extends State<MyHome> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset(
-            'assets/welcomeToLG.png',
-            width: MediaQuery.of(context).size.width * 0.7,
-            fit: BoxFit.scaleDown,
+          Column(
+            children: [
+              const SizedBox(
+                height: 20,
+              ),
+              Image.asset(
+                'assets/welcomeToLG.png',
+                width: MediaQuery.of(context).size.width * 0.7,
+                fit: BoxFit.scaleDown,
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              HomeRoutes(),
+            ],
           ),
-          HomeRoutes(),
           Image.asset(
             'assets/footer.png',
             width: MediaQuery.of(context).size.width * 0.3,
@@ -84,7 +94,7 @@ class HomeRoutes extends StatelessWidget {
           children: [
             LinkHome(
                 onPressed: () {
-                   Navigator.pushReplacementNamed(context, '/menu');
+                  Navigator.pushReplacementNamed(context, '/menu');
                 },
                 icon: const Icon(
                   Icons.production_quantity_limits,

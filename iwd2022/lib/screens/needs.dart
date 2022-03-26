@@ -7,18 +7,16 @@ import 'package:iwd2022/screens/Drawer.dart';
 import 'package:iwd2022/screens/add_task.dart';
 
 List<Task> currentTasks = [
-  Task(
-      description:
-          "jib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batatajib batata",
-      title: "title1"),
-  Task(description: "jib batata", title: "title2"),
-  Task(description: "jib batata", title: "title3"),
-  Task(description: "jib batata", title: "title4"),
+  Task(description: "Jib 4 kg batata", title: "Bata"),
+  Task(description: "jib 4 khobzat", title: "Khobz"),
+  Task(description: "jib 2 batata", title: "lait"),
 ];
 
-List<Task> onProgressTasks = [];
+List<Task> onProgressTasks = [
+  Task(description: "chekara smid", title: "Smid"),
+];
 List<Task> finishedTasks = [];
-Task targetTask = Task(description: "", title: "");
+Task targetTask = Task(description: "bidoun ta3 litra", title: "Zit");
 
 class Needs extends StatefulWidget {
   const Needs({Key? key}) : super(key: key);
@@ -168,6 +166,9 @@ class _NeedsState extends State<Needs> {
                       )
                       .toList(),
             ),
+            const SizedBox(
+              height: 20,
+            ),
             Row(
               children: const [
                 Icon(
@@ -228,6 +229,9 @@ class _NeedsState extends State<Needs> {
                         ),
                       )
                       .toList(),
+            ),
+            const SizedBox(
+              height: 20,
             ),
             Row(
               children: const [
