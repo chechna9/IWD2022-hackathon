@@ -8,13 +8,14 @@ import 'package:iwd2022/screens/menu.dart';
 import 'package:iwd2022/screens/test_swiper.dart';
 
 class MyBottonSheet extends StatefulWidget {
-  const MyBottonSheet({Key? key}) : super(key: key);
+  const MyBottonSheet({Key? key}) : super(key: key,);
 
   @override
   State<MyBottonSheet> createState() => _MyBottonSheetState();
 }
 
 class _MyBottonSheetState extends State<MyBottonSheet> {
+  int food = 0 ;
   List<ProductDataModel> recepies = [
     ProductDataModel(
         category: "Soupe",
@@ -96,81 +97,132 @@ class _MyBottonSheetState extends State<MyBottonSheet> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Column(
-                  children: [
-                    Text(
-                      "Breakfast",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 2,
-                    ),
-                    Container(
-                      width: 12,
-                      height: 3,
-                      color: Colors.black,
-                    )
-                  ],
-                ),
-                Column(
-                  children: [
-                    Text(
-                      "Lunch",
-                      style: TextStyle(
+                GestureDetector(
+                  onTap: (){
+                    setState(() {
+                      food = 0 ;
+                    });
+                  },
+                  child: Column(
+                    children: [
+                      Text(
+                        "Breakfast",
+                        style: TextStyle(
                           fontWeight: FontWeight.w600,
-                          color: Color(0xffC40552)),
-                    ),
-                    SizedBox(
-                      height: 2,
-                    ),
-                    Container(
-                      width: 12,
-                      height: 3,
-                      color: Color(0xffC40552),
-                    )
-                  ],
-                ),
-                Column(
-                  children: [
-                    Text(
-                      "Dinner",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
+                          color: food == 0 ?  Colors.redAccent : Colors.black )
                       ),
-                    ),
-                    SizedBox(
-                      height: 2,
-                    ),
-                    Container(
-                      width: 12,
-                      height: 3,
-                      color: Colors.black,
-                    )
-                  ],
-                ),
-                Column(
-                  children: [
-                    Text(
-                      "Dessert",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
+                      SizedBox(
+                        height: 2,
                       ),
-                    ),
-                    SizedBox(
-                      height: 2,
-                    ),
-                    Container(
-                      width: 12,
-                      height: 3,
-                      color: Colors.black,
-                    )
-                  ],
+                      Container(
+                        width:  food == 0 ? 12 : 0,
+                        height: 3,
+                        color: Colors.redAccent,
+                      )
+                    ],
+                  ),
+                ),
+                GestureDetector(
+                   onTap: (){
+                    setState(() {
+                      food = 1 ;
+                    });
+                  },
+                  child: Column(
+                    children: [
+                      Text(
+                        "Lunch",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            color: food == 1 ?  Colors.redAccent : Colors.black ),
+                      ),
+                      SizedBox(
+                        height: 2,
+                      ),
+                        Container(
+                        width:  food == 1 ? 12 : 0,
+                        height: 3,
+                        color: Colors.redAccent,
+                      )
+                    ],
+                  ),
+                ),
+                GestureDetector(
+                   onTap: (){
+                    setState(() {
+                      food = 2 ;
+                    });
+                  },
+                  child: Column(
+                    children: [
+                      Text(
+                        "Dinner",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          color: food == 2 ?  Colors.redAccent : Colors.black 
+                        ),
+                      ),
+                      SizedBox(
+                        height: 2,
+                      ),
+                        Container(
+                        width:  food == 2 ? 12 : 0,
+                        height: 3,
+                        color: Colors.redAccent,
+                      )
+                    ],
+                  ),
+                ),
+                GestureDetector(
+                    onTap: (){
+                    setState(() {
+                      food = 3 ;
+                    });
+                  },
+                  child: Column(
+                    children: [
+                      Text(
+                        "Dessert",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          color: food == 3 ?  Colors.redAccent : Colors.black 
+                        ),
+                      ),
+                      SizedBox(
+                        height: 2,
+                      ),
+                      Container(
+                        width:  food == 0 ? 12 : 0,
+                        height: 3,
+                        color: Colors.redAccent,
+                      )
+                    ],
+                  ),
                 ),
               ],
             ),
-            TestSwiper()
+            TestSwiper(),
+            SizedBox(height: 20,),
+                    ElevatedButton(
+                        onPressed: () {},
+                        style: TextButton.styleFrom(
+                            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+                            backgroundColor: Color.fromARGB(255, 33, 190, 201)),
+                        child: Container(
+                          width: 100,
+                        
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text("Export"),
+                              Icon(
+                                Icons.arrow_right,
+                                color: Colors.white,
+                              )
+                            ],
+                          ),
+                        )),
           ]),
         ))
       ]),

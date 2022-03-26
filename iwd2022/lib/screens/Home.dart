@@ -83,7 +83,9 @@ class HomeRoutes extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             LinkHome(
-                onPressed: () {},
+                onPressed: () {
+                   Navigator.pushReplacementNamed(context, '/menu');
+                },
                 icon: const Icon(
                   Icons.production_quantity_limits,
                   size: 34,
@@ -94,7 +96,9 @@ class HomeRoutes extends StatelessWidget {
               width: 0,
             ),
             LinkHome(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/showRecette');
+                },
                 icon: const Icon(
                   Icons.receipt,
                   size: 34,

@@ -4,6 +4,7 @@ import 'dart:async';
 import "package:flutter/material.dart";
 import 'package:flutter/scheduler.dart';
 import 'package:iwd2022/components/myBottomSheet.dart';
+import 'package:iwd2022/screens/Drawer.dart';
 
 class LetsCookies extends StatefulWidget {
   const LetsCookies({Key? key}) : super(key: key);
@@ -24,7 +25,7 @@ class _LetsCookiesState extends State<LetsCookies> {
         elevation: 0,
         context: ctx,
         builder: (ctx) => FractionallySizedBox(
-            heightFactor: 0.63,
+            heightFactor: 0.67,
             child: Container(
                 width: 300,
                 height: 800,
@@ -44,7 +45,44 @@ class _LetsCookiesState extends State<LetsCookies> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+            final GlobalKey<ScaffoldState> _scaffoldKey =
+        new GlobalKey<ScaffoldState>();
+    return Scaffold(
+              backgroundColor: Colors.white,
+        key: _scaffoldKey,
+        drawer: MyDrawer(),
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.white,
+          leading: ElevatedButton(
+            style: TextButton.styleFrom(
+                backgroundColor: Colors.transparent, elevation: 0),
+            onPressed: () => _scaffoldKey.currentState!.openDrawer(),
+            child: Container(
+              padding: EdgeInsets.only(left: 7),
+              child: Image.asset(
+                'assets/home.png',
+                width: 30.0,
+                height: 30.0,
+                fit: BoxFit.contain,
+              ),
+            ),
+          ),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.notifications_sharp,
+                color: Color.fromARGB(255, 66, 61, 61),
+                size: 35,
+              ),
+            ),
+            const SizedBox(
+              width: 20,
+            ),
+          ],
+        ),
+        body: Column(
       children: [
         SizedBox(
           height: 30,
@@ -174,6 +212,8 @@ class _LetsCookiesState extends State<LetsCookies> {
           ],
         )
       ],
+    ) ,
     );
+    
   }
 }
