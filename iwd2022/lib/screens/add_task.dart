@@ -23,34 +23,7 @@ class _AddTaskState extends State<AddTask> {
         horizontal: 20,
       ),
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          leading: ElevatedButton(
-            style: TextButton.styleFrom(
-                backgroundColor: Colors.transparent, elevation: 0),
-            onPressed: () => _scaffoldKey.currentState!.openDrawer(),
-            child: Container(
-              padding: EdgeInsets.only(left: 7),
-              child: Image.asset(
-                'assets/home.png',
-                width: 30.0,
-                height: 30.0,
-                fit: BoxFit.contain,
-              ),
-            ),
-          ),
-          actions: [
-            Container(
-              padding: EdgeInsets.only(right: 7),
-              child: Image.asset(
-                'assets/LG-LOGO.png',
-                width: 70.0,
-                height: 70.0,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ],
-        ),
+        
         backgroundColor: Colors.transparent,
         body: SingleChildScrollView(
           child: Form(
@@ -125,6 +98,7 @@ class _AddTaskState extends State<AddTask> {
                       child: TextButton(
                         style: TextButton.styleFrom(
                           backgroundColor: Colors.white,
+                        
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15),
                           ),
@@ -132,12 +106,16 @@ class _AddTaskState extends State<AddTask> {
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        child: const Text(
-                          'Annuler',
-                          style: TextStyle(
-                              color: myRed,
-                              fontWeight: FontWeight.w900,
-                              fontSize: 24),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(vertical: 8,horizontal: 15),
+                          child: const Text(
+                            'Annuler',
+                            
+                            style: TextStyle(
+                                color: myRed,
+                                fontWeight: FontWeight.w900,
+                                fontSize: 24),
+                          ),
                         ),
                       ),
                     ),
@@ -161,12 +139,15 @@ class _AddTaskState extends State<AddTask> {
                             Navigator.pop(context);
                           }
                         },
-                        child: const Text(
-                          'Ajouter',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w900,
-                              fontSize: 24),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(vertical: 8,horizontal: 15),
+                          child: const Text(
+                            'Ajouter',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w900,
+                                fontSize: 24),
+                          ),
                         ),
                       ),
                     ),
